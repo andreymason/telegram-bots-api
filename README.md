@@ -165,4 +165,3 @@ This project aims to create a simple HTTP server using FastAPI for building an A
 ---
 
 This README file provides the basic steps for installing, configuring, and using your project, as well as instructions for users to interact with your HTTP server to send messages to the bot and receive responses.
-```
