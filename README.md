@@ -1,4 +1,3 @@
-```markdown
 # Telegram Bot API
 
 This project aims to create a simple HTTP server using FastAPI for building an API to interact with Telegram bots. It facilitates sending messages to a Telegram bot and receiving responses, essentially serving as an API for interacting with any Telegram bot.
