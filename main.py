@@ -15,7 +15,6 @@ load_dotenv()
 
 app = FastAPI()
 
-# Асинхронный контекстный менеджер для управления соединением с Telegram
 class TelegramConnection:
     def __init__(self):
         self.client = None
@@ -28,7 +27,6 @@ class TelegramConnection:
     async def __aexit__(self, exc_type, exc, tb):
         await self.client.disconnect()
 
-# Функция для преобразования сообщения в JSON
 def message_to_json(message: Message) -> str:
     formatted_date = message.date.strftime("%m-%d-%Y %H:%M:%S")
     replies = []
@@ -46,11 +44,10 @@ def message_to_json(message: Message) -> str:
     return json_string
 
 def generate_random_string(length=16):
-    letters = string.ascii_letters  # Получаем все символы латинского алфавита (верхний и нижний регистры)
+    letters = string.ascii_letters  
     random_string = ''.join(random.choice(letters) for _ in range(length))
     return random_string
 
-# Обработчик запроса для создания группы и авторизации
 @app.get("/authorize")
 async def authorize():
     async with TelegramConnection() as client:
